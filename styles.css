@@ -726,7 +726,7 @@ main {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 120px 20px 80px;
+  padding-top: 120px;
   background-color: #e8f0eb; /* Fond vert pâle */
   overflow: hidden;
   box-sizing: border-box;
@@ -1551,9 +1551,7 @@ main {
   font-size: 1rem;
   color: var(--texte-fonce);
   background-color: #f9f9f9;
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
@@ -1899,9 +1897,7 @@ nav.mobile-nav ul {
   text-align: center;
   text-decoration: none;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
   align-items: center;
