@@ -1,418 +1,436 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accueil - Valentin HENRY - Ostéopathe D.O.</title>
-    
+
     <!-- Ajout des polices Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-        :root {
-            --beige-clair: #f5f0e6;
-            --beige-fonce: #e0ceb1;
-            --vert-fonce: #2c5545;
-            --vert-moyen: #3a7259;
-            --texte-fonce: #333333;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Raleway', sans-serif;
-        }
-        
-        body {
-            background-color: var(--beige-clair);
-            color: var(--texte-fonce);
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            overflow-x: hidden;
-        }
-        
-        header {
-            background-color: rgba(245, 240, 230, 0.95); /* Beige avec transparence */
-            backdrop-filter: blur(5px);
-            padding: 1rem 5%;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            border-bottom: 3px solid var(--vert-fonce);
-            transition: transform 0.4s ease-in-out;
-        }
-        
-        header.hidden {
-            transform: translateY(-100%);
-        }
-        
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: var(--vert-fonce);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            font-size: 1.5rem;
-            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-        }
-        
-        .title-container h1 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--vert-fonce);
-        }
-        
-        .title-container p {
-            font-size: 1rem;
-            color: var(--texte-fonce);
-        }
-        
-        nav.desktop-nav {
-            display: flex;
-        }
-        
-        nav.desktop-nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: var(--texte-fonce);
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-            padding-bottom: 5px;
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--vert-fonce);
-            transition: width 0.3s;
-        }
-        
-        nav a:hover, nav a.active {
-            color: var(--vert-fonce);
-        }
-        
-        nav a:hover::after, nav a.active::after {
-            width: 100%;
-        }
-        
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--vert-fonce);
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-        
-        nav.mobile-nav {
-            display: none;
-            position: fixed;
-            top: 80px;
-            left: 0;
-            right: 0;
-            background-color: rgba(245, 240, 230, 0.98);
-            backdrop-filter: blur(10px);
-            border-bottom: 3px solid var(--vert-fonce);
-            z-index: 99;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease-in-out;
-            padding: 1rem 0;
-        }
-        
-        nav.mobile-nav.active {
-            transform: translateY(0);
-            display: block;
-        }
-        
-        nav.mobile-nav ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-            padding: 1rem 0;
-        }
-        
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            padding-top: 80px; /* Pour laisser de l'espace pour l'en-tête fixe */
-            background-color: #e8f0eb; /* Fond vert pâle */
-            overflow: hidden;
-            box-sizing: border-box;
+      :root {
+        --beige-clair: #f5f0e6;
+        --beige-fonce: #e0ceb1;
+        --vert-fonce: #2c5545;
+        --vert-moyen: #3a7259;
+        --texte-fonce: #333333;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Raleway', sans-serif;
+      }
+
+      body {
+        background-color: var(--beige-clair);
+        color: var(--texte-fonce);
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      header {
+        background-color: rgba(245, 240, 230, 0.95); /* Beige avec transparence */
+        backdrop-filter: blur(5px);
+        padding: 1rem 5%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        border-bottom: 3px solid var(--vert-fonce);
+        transition: transform 0.4s ease-in-out;
+      }
+
+      header.hidden {
+        transform: translateY(-100%);
+      }
+
+      .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .logo {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: var(--vert-fonce);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .title-container h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--vert-fonce);
+      }
+
+      .title-container p {
+        font-size: 1rem;
+        color: var(--texte-fonce);
+      }
+
+      nav.desktop-nav {
+        display: flex;
+      }
+
+      nav.desktop-nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--texte-fonce);
+        font-weight: 500;
+        transition: color 0.3s;
+        position: relative;
+        padding-bottom: 5px;
+      }
+
+      nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--vert-fonce);
+        transition: width 0.3s;
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--vert-fonce);
+      }
+
+      nav a:hover::after,
+      nav a.active::after {
+        width: 100%;
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--vert-fonce);
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+
+      nav.mobile-nav {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: rgba(245, 240, 230, 0.98);
+        backdrop-filter: blur(10px);
+        border-bottom: 3px solid var(--vert-fonce);
+        z-index: 99;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        padding: 1rem 0;
+      }
+
+      nav.mobile-nav.active {
+        transform: translateY(0);
+        display: block;
+      }
+
+      nav.mobile-nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem 0;
+      }
+
+      .hero-section {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-top: 80px; /* Pour laisser de l'espace pour l'en-tête fixe */
+        background-color: #e8f0eb; /* Fond vert pâle */
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+
+      .hero-container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        padding: 0 20px; /* Un peu de marge sur les côtés */
+      }
+
+      .hero-image {
+        flex: 0 0 66%;
+        max-width: 66%;
+        height: calc(100vh - 100px);
+        position: relative;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .hero-content {
+        flex: 0 0 34%;
+        max-width: 34%;
+        padding: 2rem;
+        background-color: #e8f0eb; /* Même fond vert pâle que la section */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-section h1 {
+        color: var(--vert-fonce);
+        font-size: 2.6rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        margin-top: -1rem; /* Décaler légèrement vers le haut */
+      }
+
+      .hero-subtitle {
+        font-size: 1.4rem;
+        margin-bottom: 5rem; /* Beaucoup d'espace avant le bouton */
+        color: var(--texte-fonce);
+        line-height: 1.6;
+        font-family: 'Open Sans', sans-serif;
+        word-wrap: break-word;
+        max-width: 100%;
+        font-weight: 600;
+      }
+
+      .btn-rdv {
+        display: inline-flex;
+        align-items: center;
+        background-color: var(--vert-fonce);
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: fit-content;
+        margin-top: 1rem;
+      }
+
+      .btn-rdv:hover {
+        background-color: var(--vert-moyen);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .rdv-icon {
+        font-size: 1.5rem;
+        margin-right: 0.8rem;
+      }
+
+      .rdv-text {
+        font-size: 1.1rem;
+      }
+
+      /* Responsive */
+      @media screen and (max-width: 992px) {
+        .hero-container {
+          flex-direction: column;
         }
 
-        .hero-container {
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            padding: 0 20px; /* Un peu de marge sur les côtés */
+        .hero-image,
+        .hero-content {
+          flex: 0 0 100%;
+          max-width: 100%;
         }
 
         .hero-image {
-            flex: 0 0 66%;
-            max-width: 66%;
-            height: calc(100vh - 100px);
-            position: relative;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .hero-content {
-            flex: 0 0 34%;
-            max-width: 34%;
-            padding: 2rem;
-            background-color: #e8f0eb; /* Même fond vert pâle que la section */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+          height: 50vh;
         }
 
         .hero-section h1 {
-            color: var(--vert-fonce);
-            font-size: 2.6rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 700;
-            margin-top: -1rem; /* Décaler légèrement vers le haut */
+          font-size: 2.2rem;
         }
 
         .hero-subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 5rem; /* Beaucoup d'espace avant le bouton */
-            color: var(--texte-fonce);
-            line-height: 1.6;
-            font-family: 'Open Sans', sans-serif;
-            word-wrap: break-word;
-            max-width: 100%;
-            font-weight: 600;
+          font-size: 1rem;
+          margin-bottom: 3rem;
+        }
+
+        .hero-section {
+          height: auto;
+          min-height: 100vh;
+        }
+
+        nav.desktop-nav {
+          display: none;
+        }
+
+        .mobile-menu-toggle {
+          display: block;
+        }
+
+        .header-content {
+          padding: 0 1rem;
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        .hero-section h1 {
+          font-size: 1.8rem;
         }
 
         .btn-rdv {
-            display: inline-flex;
-            align-items: center;
-            background-color: var(--vert-fonce);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: fit-content;
-            margin-top: 1rem;
+          width: 100%;
+          justify-content: center;
         }
-
-        .btn-rdv:hover {
-            background-color: var(--vert-moyen);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .rdv-icon {
-            font-size: 1.5rem;
-            margin-right: 0.8rem;
-        }
-
-        .rdv-text {
-            font-size: 1.1rem;
-        }
-
-        /* Responsive */
-        @media screen and (max-width: 992px) {
-            .hero-container {
-                flex-direction: column;
-            }
-            
-            .hero-image, .hero-content {
-                flex: 0 0 100%;
-                max-width: 100%;
-            }
-            
-            .hero-image {
-                height: 50vh;
-            }
-            
-            .hero-section h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-                margin-bottom: 3rem;
-            }
-            
-            .hero-section {
-                height: auto;
-                min-height: 100vh;
-            }
-            
-            nav.desktop-nav {
-                display: none;
-            }
-            
-            .mobile-menu-toggle {
-                display: block;
-            }
-            
-            .header-content {
-                padding: 0 1rem;
-            }
-        }
-
-        @media screen and (max-width: 576px) {
-            .hero-section h1 {
-                font-size: 1.8rem;
-            }
-            
-            .btn-rdv {
-                width: 100%;
-                justify-content: center;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header id="site-header">
-        <div class="header-content">
-            <div class="logo-container">
-                <div class="logo">VH</div>
-                <div class="title-container">
-                    <h1>Valentin HENRY</h1>
-                    <p>Ostéopathe D.O.</p>
-                </div>
-            </div>
-            
-            <nav class="desktop-nav">
-                <ul>
-                    <li><a href="home.html" class="active">Accueil</a></li>
-                    <li><a href="about.html">À propos</a></li>
-                    <li><a href="care.html">Soins</a></li>
-                    <li><a href="meeting.html">Prise de RDV</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="info.html">Infos</a></li>
-                </ul>
-            </nav>
-            
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
-            
-            <nav class="mobile-nav" id="mobile-menu">
-                <ul>
-                    <li><a href="home.html" class="active">Accueil</a></li>
-                    <li><a href="about.html">À propos</a></li>
-                    <li><a href="care.html">Soins</a></li>
-                    <li><a href="meeting.html">Prise de RDV</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="info.html">Infos</a></li>
-                </ul>
-            </nav>
+      <div class="header-content">
+        <div class="logo-container">
+          <div class="logo">VH</div>
+          <div class="title-container">
+            <h1>Valentin HENRY</h1>
+            <p>Ostéopathe D.O.</p>
+          </div>
         </div>
+
+        <nav class="desktop-nav">
+          <ul>
+            <li><a href="home.html" class="active">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="care.html">Soins</a></li>
+            <li><a href="meeting.html">Prise de RDV</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="info.html">Infos</a></li>
+          </ul>
+        </nav>
+
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <nav class="mobile-nav" id="mobile-menu">
+          <ul>
+            <li><a href="home.html" class="active">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="care.html">Soins</a></li>
+            <li><a href="meeting.html">Prise de RDV</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="info.html">Infos</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <!-- Section Héro -->
-        <section class="hero-section">
-            <div class="hero-container">
-                <div class="hero-image">
-                    <!-- Remplacez ceci par votre image dans WordPress/Elementor -->
-                    <img src="/api/placeholder/1200/800" alt="Ostéopathie bien-être">
-                </div>
-                <div class="hero-content">
-                    <h1>Vers un équilibre qui vous va mieux</h1>
-                    <p class="hero-subtitle">Le corps, L'émotion,<br>Le microbiote</p>
-                    <a href="meeting.html" class="btn-rdv">
-                        <span class="rdv-icon">📅</span>
-                        <span class="rdv-text">Prendre rendez-vous</span>
-                    </a>
-                </div>
-            </div>
-        </section>
+      <!-- Section Héro -->
+      <section class="hero-section">
+        <div class="hero-container">
+          <div class="hero-image">
+            <!-- Remplacez ceci par votre image dans WordPress/Elementor -->
+            <img src="/api/placeholder/1200/800" alt="Ostéopathie bien-être" />
+          </div>
+          <div class="hero-content">
+            <h1>Vers un équilibre qui vous va mieux</h1>
+            <p class="hero-subtitle">Le corps, L'émotion,<br />Le microbiote</p>
+            <a href="meeting.html" class="btn-rdv">
+              <span class="rdv-icon">📅</span>
+              <span class="rdv-text">Prendre rendez-vous</span>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script>
-        // Script pour gérer le menu mobile
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('active');
-        }
-        
-        // Script pour faire disparaître l'en-tête après défilement à mi-page
-        document.addEventListener('DOMContentLoaded', function() {
-            const header = document.getElementById('site-header');
-            let lastScrollTop = 0;
-            
-            window.addEventListener('scroll', function() {
-                const windowHeight = window.innerHeight;
-                const scrollY = window.scrollY;
-                
-                // Calcul de la moitié de la hauteur visible
-                const halfViewport = windowHeight / 2;
-                
-                // Si le défilement dépasse la moitié de l'écran, masquer l'en-tête
-                if (scrollY > halfViewport) {
-                    header.classList.add('hidden');
-                } else {
-                    // Sinon, l'afficher
-                    header.classList.remove('hidden');
-                }
-                
-                lastScrollTop = scrollY;
-            });
+      // Script pour gérer le menu mobile
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('active');
+      }
+
+      // Script pour faire disparaître l'en-tête après défilement à mi-page
+      document.addEventListener('DOMContentLoaded', function () {
+        const header = document.getElementById('site-header');
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', function () {
+          const windowHeight = window.innerHeight;
+          const scrollY = window.scrollY;
+
+          // Calcul de la moitié de la hauteur visible
+          const halfViewport = windowHeight / 2;
+
+          // Si le défilement dépasse la moitié de l'écran, masquer l'en-tête
+          if (scrollY > halfViewport) {
+            header.classList.add('hidden');
+          } else {
+            // Sinon, l'afficher
+            header.classList.remove('hidden');
+          }
+
+          lastScrollTop = scrollY;
         });
+      });
     </script>
-</body>
+  </body>
 </html>

@@ -1,71 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Valentin HENRY - Ostéopathe D.O.</title>
-    
+
     <!-- Polices Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Polices Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header id="site-header">
-        <div class="header-content">
-            <div class="logo-container">
-                <div class="logo">VH</div>
-                <div class="title-container">
-                    <h1>Valentin HENRY</h1>
-                    <p>Ostéopathe D.O.</p>
-                </div>
-            </div>
-            
-            <nav class="desktop-nav">
-                <ul>
-                    <li><a data-page="home" class="active">Accueil</a></li>
-                    <li><a data-page="about">À propos</a></li>
-                    <li><a data-page="care">Soins</a></li>
-                    <li><a data-page="meeting">Prise de RDV</a></li>
-                    <li><a data-page="contact">Contact</a></li>
-                    <li><a data-page="info">Infos</a></li>
-                </ul>
-            </nav>
-            
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
-            
-            <nav class="mobile-nav" id="mobile-menu">
-                <ul>
-                    <li><a data-page="home" class="active">Accueil</a></li>
-                    <li><a data-page="about">À propos</a></li>
-                    <li><a data-page="care">Soins</a></li>
-                    <li><a data-page="meeting">Prise de RDV</a></li>
-                    <li><a data-page="contact">Contact</a></li>
-                    <li><a data-page="info">Infos</a></li>
-                </ul>
-            </nav>
+      <div class="header-content">
+        <div class="logo-container">
+          <div class="logo">VH</div>
+          <div class="title-container">
+            <h1>Valentin HENRY</h1>
+            <p>Ostéopathe D.O.</p>
+          </div>
         </div>
+
+        <nav class="desktop-nav">
+          <ul>
+            <li><a data-page="home" class="active">Accueil</a></li>
+            <li><a data-page="about">À propos</a></li>
+            <li><a data-page="care">Soins</a></li>
+            <li><a data-page="meeting">Prise de RDV</a></li>
+            <li><a data-page="contact">Contact</a></li>
+            <li><a data-page="info">Infos</a></li>
+          </ul>
+        </nav>
+
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <nav class="mobile-nav" id="mobile-menu">
+          <ul>
+            <li><a data-page="home" class="active">Accueil</a></li>
+            <li><a data-page="about">À propos</a></li>
+            <li><a data-page="care">Soins</a></li>
+            <li><a data-page="meeting">Prise de RDV</a></li>
+            <li><a data-page="contact">Contact</a></li>
+            <li><a data-page="info">Infos</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main id="main-content">
-        <!-- Content will be loaded here -->
-        <div class="loading">Démarrage...</div>
+      <!-- Content will be loaded here -->
+      <div class="loading">Démarrage...</div>
     </main>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
