@@ -9,7 +9,22 @@
       <div class="accordion-item">
         <button class="accordion-header">
           L'ostéopathie, comment ça marche ?
-          <span>↓</span>
+          <svg
+            class="arrow"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 5L8 11L14 5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -41,7 +56,22 @@
       <div class="accordion-item">
         <button class="accordion-header">
           Comment se déroule une séance ?
-          <span>↓</span>
+          <svg
+            class="arrow"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 5L8 11L14 5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -74,7 +104,22 @@
       <div class="accordion-item">
         <button class="accordion-header">
           Dans quels cas consulter ?
-          <span>↓</span>
+          <svg
+            class="arrow"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 5L8 11L14 5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -122,7 +167,22 @@
       <div class="accordion-item">
         <button class="accordion-header">
           Remboursements
-          <span>↓</span>
+          <svg
+            class="arrow"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 5L8 11L14 5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -149,7 +209,22 @@
       <div class="accordion-item">
         <button class="accordion-header">
           Précautions et contre-indications
-          <span>↓</span>
+          <svg
+            class="arrow"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 5L8 11L14 5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </button>
         <div class="accordion-content">
           <div class="accordion-content-inner">
@@ -199,51 +274,3 @@
     </div>
   </div>
 </section>
-
-<script>
-  // Script pour gérer le menu mobile
-  function toggleMobileMenu() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.classList.toggle('active');
-  }
-
-  // Script pour faire disparaître l'en-tête après défilement à mi-page
-  document.addEventListener('DOMContentLoaded', function () {
-    const header = document.getElementById('site-header');
-    let lastScrollTop = 0;
-
-    window.addEventListener('scroll', function () {
-      const windowHeight = window.innerHeight;
-      const scrollY = window.scrollY;
-
-      // Calcul de la moitié de la hauteur visible
-      const halfViewport = windowHeight / 2;
-
-      // Si le défilement dépasse la moitié de l'écran, masquer l'en-tête
-      if (scrollY > halfViewport) {
-        header.classList.add('hidden');
-      } else {
-        // Sinon, l'afficher
-        header.classList.remove('hidden');
-      }
-
-      lastScrollTop = scrollY;
-    });
-
-    // Script pour gérer l'accordéon
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-    accordionHeaders.forEach(header => {
-      header.addEventListener('click', function () {
-        this.classList.toggle('active');
-
-        const content = this.nextElementSibling;
-        if (this.classList.contains('active')) {
-          content.style.maxHeight = content.scrollHeight + 'px';
-        } else {
-          content.style.maxHeight = 0;
-        }
-      });
-    });
-  });
-</script>

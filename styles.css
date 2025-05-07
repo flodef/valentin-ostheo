@@ -1536,7 +1536,6 @@ main {
   display: block;
   font-size: 1.1rem;
   color: var(--texte-fonce);
-  margin-bottom: 0.5rem;
   font-weight: 500;
 }
 
@@ -1567,7 +1566,7 @@ main {
 }
 
 .form-consent input[type='checkbox'] {
-  margin-top: 5px;
+  margin-top: 2px;
   margin-right: 10px;
 }
 
@@ -1744,7 +1743,7 @@ nav a.active::after {
   width: 100%;
 }
 
-.mobile-menu-toggle {
+mobile-menu-toggle {
   display: none;
   background: none;
   border: none;
@@ -1957,4 +1956,14 @@ nav.mobile-nav ul {
     font-size: 1.1rem;
     padding: 1.2rem;
   }
+}
+
+/* Style for the arrow in accordion headers */
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.accordion-header.active .arrow {
+  transform: rotate(180deg);
 }
