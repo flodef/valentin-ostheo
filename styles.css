@@ -325,15 +325,16 @@ main {
 }
 
 .soin-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
   margin: 0 auto 1.5rem;
   background-color: var(--fond-clair);
-  border-radius: 50%;
   color: var(--vert-fonce);
+  font-size: 2.5rem;
 }
 
 .soin-card h3 {
