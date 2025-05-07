@@ -1,4 +1,11 @@
 // Main app JavaScript to handle SPA navigation
+
+// Function to toggle mobile menu
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenu.classList.toggle('active');
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   // Handle navigation
   const navLinks = document.querySelectorAll('nav a');
@@ -91,12 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
         console.error('Error loading content:', error);
       });
-  }
-
-  // Function to toggle mobile menu
-  function toggleMobileMenu() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.classList.toggle('active');
   }
 
   // Script for header scroll behavior
