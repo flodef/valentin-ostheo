@@ -664,7 +664,7 @@ main {
 @media screen and (max-width: 576px) {
   .soins-section,
   .soin-details {
-    padding: 60px 15px;
+    padding: 120px 15px 60px;
   }
 
   .section-header h2,
@@ -1303,7 +1303,7 @@ main {
 @media screen and (max-width: 768px) {
   .rdv-section,
   .osteo-van-planning {
-    padding: 60px 15px;
+    padding: 120px 15px 60px;
   }
 
   .section-header h2,
@@ -1616,7 +1616,7 @@ main {
   }
 
   .contact-section {
-    padding: 60px 20px;
+    padding: 120px 15px 60px;
   }
 
   .section-header h2 {
@@ -1632,7 +1632,7 @@ main {
 
 @media screen and (max-width: 576px) {
   .contact-section {
-    padding: 40px 15px;
+    padding: 120px 15px 60px;
   }
 
   .section-header h2 {
