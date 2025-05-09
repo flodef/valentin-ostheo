@@ -35,9 +35,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
+  scroll-behavior: smooth;
 }
 
-body {
+body,
+html {
   background-color: var(--beige-clair);
   color: var(--texte-fonce);
   width: 100%;

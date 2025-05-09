@@ -588,36 +588,5 @@
         </div>
       </div>
     </div>
-
-    <!-- Script pour les onglets de calendrier inline -->
-    <script>
-      function openMonth(monthName) {
-        // Masquer tout le contenu des onglets
-        var tabContents = document.getElementsByClassName('calendar-tab-content');
-        for (var i = 0; i < tabContents.length; i++) {
-          tabContents[i].classList.remove('active');
-        }
-
-        // Désactiver tous les boutons d'onglets
-        var tabButtons = document.getElementsByClassName('tab-button');
-        for (var i = 0; i < tabButtons.length; i++) {
-          tabButtons[i].classList.remove('active');
-        }
-
-        // Afficher l'onglet sélectionné et activer son bouton
-        document.getElementById(monthName).classList.add('active');
-
-        // Trouver et activer le bouton correspondant
-        var buttons = document.querySelectorAll('.tab-button');
-        for (var i = 0; i < buttons.length; i++) {
-          if (buttons[i].textContent.toLowerCase().includes(monthName)) {
-            buttons[i].classList.add('active');
-            break;
-          }
-        }
-      }
-    </script>
   </div>
 </section>
-
-<!-- Meeting styles moved to the external stylesheet (styles.css) -->

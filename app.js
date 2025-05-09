@@ -6,6 +6,33 @@ function toggleMobileMenu() {
   mobileMenu.classList.toggle('active');
 }
 
+// Define openMonth function globally for meeting page
+window.openMonth = function(monthName) {
+  // Masquer tout le contenu des onglets
+  var tabContents = document.getElementsByClassName('calendar-tab-content');
+  for (var i = 0; i < tabContents.length; i++) {
+    tabContents[i].classList.remove('active');
+  }
+
+  // Désactiver tous les boutons d'onglets
+  var tabButtons = document.getElementsByClassName('tab-button');
+  for (var i = 0; i < tabButtons.length; i++) {
+    tabButtons[i].classList.remove('active');
+  }
+
+  // Afficher l'onglet sélectionné et activer son bouton
+  document.getElementById(monthName).classList.add('active');
+
+  // Trouver et activer le bouton correspondant
+  var buttons = document.querySelectorAll('.tab-button');
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].textContent.toLowerCase().includes(monthName)) {
+      buttons[i].classList.add('active');
+      break;
+    }
+  }
+};
+
 document.addEventListener('DOMContentLoaded', function () {
   // Handle navigation
   const navLinks = document.querySelectorAll('nav a');
@@ -46,7 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
   let currentPage = 'home'; // Default
 
   // Normalize the path to extract the page name
-  const normalizedPath = path === '/' || path === '/index.html' ? 'home' : path.replace(/^\/|\.html$/g, '');
+  const normalizedPath =
+    path === '/' || path === '/index.html' ? 'home' : path.replace(/^\/|\.html$/g, '');
   currentPage = normalizedPath || 'home';
 
   // Set active navigation item
