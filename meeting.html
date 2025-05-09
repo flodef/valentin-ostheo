@@ -595,8 +595,19 @@
   // Check if URL ends with .html
   function checkHtmlExtension() {
     const currentUrl = window.location.href;
+    const path = window.location.pathname;
+    
+    // Skip the check for these special cases to avoid infinite loops
+    // 1. Root URL (/) 
+    // 2. URLs that end with / (directory index)
+    // 3. URLs that already point to index.html
+    if (path === '/' || path === '' || path.endsWith('/') || path.includes('index')) {
+      return;
+    }
+    
+    // Only redirect if the URL doesn't end with .html
     if (!currentUrl.endsWith('.html')) {
-      // Redirect to home page instead of showing alert
+      // Redirect to home page
       window.location.href = '/index.html';
     }
   }
