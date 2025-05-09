@@ -154,9 +154,8 @@
           formulaire. Je vous répondrai dans les meilleurs délais.
         </p>
 
-        <!-- Emplacement pour votre WPForm - à remplacer par votre shortcode WPForms -->
-        <div class="wpform-placeholder">
-          <!-- En WordPress, remplacez cette div par votre shortcode, par exemple : [wpforms id="123"] -->
+        <!-- Formulaire de contact avec Email.js -->
+        <form id="contact-form" class="wpform-placeholder">
           <div class="form-group">
             <label for="name">Nom complet *</label>
             <input type="text" id="name" name="name" required />
@@ -180,34 +179,36 @@
           <div class="form-group form-consent">
             <input type="checkbox" id="consent" name="consent" required />
             <label for="consent"
-              >J'accepte que mes données soient traitées dans le cadre de ma demande de contact
-              *</label
+              >J'accepte que mes données soient traitées afin de répondre à ma demande *</label
             >
           </div>
 
           <div class="form-submit">
-            <button type="submit" class="btn-submit">Envoyer</button>
+            <button type="submit" class="btn-submit" id="submit-btn">Envoyer</button>
+            <p id="form-status" class="form-status hidden"></p>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Email.js is now dynamically loaded by app.js for SPA support -->
 
 <script>
   // Check if URL ends with .html
   function checkHtmlExtension() {
     const currentUrl = window.location.href;
     const path = window.location.pathname;
-    
+
     // Skip the check for these special cases to avoid infinite loops
-    // 1. Root URL (/) 
+    // 1. Root URL (/)
     // 2. URLs that end with / (directory index)
     // 3. URLs that already point to index.html
     if (path === '/' || path === '' || path.endsWith('/') || path.includes('index')) {
       return;
     }
-    
+
     // Only redirect if the URL doesn't end with .html
     if (!currentUrl.endsWith('.html')) {
       // Redirect to home page

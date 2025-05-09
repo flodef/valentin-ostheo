@@ -1527,6 +1527,33 @@ main {
 }
 
 /* Styles pour le formulaire WPForms (à adapter selon vos besoins) */
+.form-status {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.form-status.success {
+  background-color: #e0f2e9;
+  color: #2c5545;
+  border: 1px solid #2c5545;
+}
+
+.form-status.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #721c24;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-submit:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
 .wpform-placeholder {
   width: 100%;
 }
@@ -1579,7 +1606,9 @@ main {
 
 .form-submit {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
   margin-top: 2rem;
 }
 
