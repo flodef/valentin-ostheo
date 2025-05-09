@@ -7,3 +7,33 @@
     <p class="hero-subtitle">Le corps, L'émotion,<br />Le microbiote</p>
   </div>
 </section>
+
+<script>
+  // Check if URL ends with .html
+  function checkHtmlExtension() {
+    const currentUrl = window.location.href;
+    if (!currentUrl.endsWith('.html')) {
+      // Redirect to home page instead of showing alert
+      window.location.href = '/index.html';
+    }
+  }
+
+  // Run the check when the page loads
+  window.addEventListener('load', checkHtmlExtension);
+
+  // Check when URL hash changes (when navigating between sections with #)
+  window.addEventListener('hashchange', checkHtmlExtension);
+
+  // Check when navigating with browser history (back/forward buttons)
+  window.addEventListener('popstate', checkHtmlExtension);
+
+  // Also set a periodic check for any other URL changes
+  let lastUrl = window.location.href;
+  setInterval(() => {
+    const currentUrl = window.location.href;
+    if (currentUrl !== lastUrl) {
+      lastUrl = currentUrl;
+      checkHtmlExtension();
+    }
+  }, 500);
+</script>
