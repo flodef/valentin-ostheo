@@ -193,8 +193,6 @@
   </div>
 </section>
 
-<!-- Email.js is now dynamically loaded by app.js for SPA support -->
-
 <script>
   // Check if URL ends with .html
   function checkHtmlExtension() {
@@ -210,7 +208,7 @@
     }
 
     // Only redirect if the URL doesn't end with .html
-    if (!currentUrl.endsWith('.html')) {
+    if (!currentUrl.endsWith('.html') && !currentUrl.includes('#')) {
       // Redirect to home page
       window.location.href = '/index.html';
     }

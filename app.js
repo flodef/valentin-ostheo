@@ -61,9 +61,6 @@ function initEmailJS() {
       emailjs.init('YOUR_PUBLIC_KEY');
 
       const contactForm = document.getElementById('contact-form');
-      const submitBtn = document.getElementById('submit-btn');
-      const formStatus = document.getElementById('form-status');
-
       if (contactForm) {
         // Remove any existing event listeners (to avoid duplicates)
         const newForm = contactForm.cloneNode(true);
