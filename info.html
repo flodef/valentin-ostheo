@@ -279,43 +279,45 @@
   </div>
 </section>
 
+<script src="checkPage.js"></script>
+
 <script>
-  // Check if URL ends with .html
-  function checkHtmlExtension() {
-    const currentUrl = window.location.href;
-    const path = window.location.pathname;
+  function initializeAccordion() {
+    console.log('Initializing accordion...');
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-    // Skip the check for these special cases to avoid infinite loops
-    // 1. Root URL (/)
-    // 2. URLs that end with / (directory index)
-    // 3. URLs that already point to index.html
-    if (path === '/' || path === '' || path.endsWith('/') || path.includes('index')) {
-      return;
-    }
+    // Remove existing event listeners first to prevent duplicates
+    accordionHeaders.forEach(header => {
+      const newHeader = header.cloneNode(true);
+      header.parentNode.replaceChild(newHeader, header);
+    });
 
-    // Only redirect if the URL doesn't end with .html
-    if (!currentUrl.endsWith('.html') && !currentUrl.includes('#')) {
-      // Redirect to home page
-      window.location.href = '/index.html';
-    }
+    // Re-select headers after replacing them
+    const refreshedHeaders = document.querySelectorAll('.accordion-header');
+    refreshedHeaders.forEach(header => {
+      header.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        if (this.classList.contains('active')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = 0;
+        }
+      });
+    });
   }
 
-  // Run the check when the page loads
-  window.addEventListener('load', checkHtmlExtension);
+  // Function to ensure initialization happens after elements are definitely available
+  function ensureInitialization() {
+    // Try to initialize with a slight delay to ensure DOM is fully processed
+    setTimeout(initializeAccordion, 100);
+  }
 
-  // Check when URL hash changes (when navigating between sections with #)
-  window.addEventListener('hashchange', checkHtmlExtension);
+  // Multiple initialization points to catch all scenarios
+  window.addEventListener('load', ensureInitialization);
+  document.addEventListener('DOMContentLoaded', ensureInitialization);
+  window.addEventListener('pageshow', ensureInitialization);
 
-  // Check when navigating with browser history (back/forward buttons)
-  window.addEventListener('popstate', checkHtmlExtension);
-
-  // Also set a periodic check for any other URL changes
-  let lastUrl = window.location.href;
-  setInterval(() => {
-    const currentUrl = window.location.href;
-    if (currentUrl !== lastUrl) {
-      lastUrl = currentUrl;
-      checkHtmlExtension();
-    }
-  }, 500);
+  // Also try immediate initialization
+  ensureInitialization();
 </script>
